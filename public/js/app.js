@@ -23,7 +23,6 @@ weatherForm.addEventListener('submit',(e)=>{
 
     const location =search.value
     //console.log(location);
-    //console.log(location);
 
     fetch('/weather?address='+location).then((response)=>{
 
