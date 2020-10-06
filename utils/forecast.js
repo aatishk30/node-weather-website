@@ -22,13 +22,13 @@ const forecast=(latitude, longitude,callback)=>{
 
     request({url, json: true},(error, {body}={})=>{
         // console.log(error)
-        // console.log(body)
+         //console.log(body)
         if(error){
             callback('Unable to connect the weather Service', undefined);
         }else if(body.error){
             callback('Unable to find Location',undefined)
         }else{
-            callback(undefined,'It is currently '+body.current.temperature+' degrees out. It feels like '+body.current.feelslike+' degrees out')
+            callback(undefined,'It is currently '+body.current.temperature+' degrees out. It feels like '+body.current.feelslike+' degrees out.'+' Weather is '+body.current.weather_descriptions+'. And humidity is '+body.current.humidity)
         }
     })
 }
